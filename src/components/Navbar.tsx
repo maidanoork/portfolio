@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import { useTheme } from "./ThemeProvider";
 import { personalInfo } from "@/data/portfolio";
 import { HiMoon, HiSun, HiMenuAlt3, HiX } from "react-icons/hi";
@@ -10,7 +11,7 @@ const navLinks = [
   { label: "About", href: "#about" },
   { label: "Skills", href: "#skills" },
   { label: "Projects", href: "#projects" },
-  { label: "Experience", href: "#experience" },
+  // { label: "Experience", href: "#experience" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -44,11 +45,20 @@ export default function Navbar() {
         <a
           href="#"
           onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: "smooth" }); }}
-          className="text-lg font-bold text-primary-600 dark:text-primary-400 hover:opacity-80 transition-opacity"
+          className="flex items-center gap-2 hover:opacity-80 transition-opacity"
         >
-          {personalInfo.name.split(" ")[0]}
-          <span className="text-slate-900 dark:text-white">
-            .{personalInfo.name.split(" ").slice(1).join("")}
+          {/* <Image
+            src="/SOVIClogo.svg"
+            alt="Logo"
+            width={32}
+            height={32}
+            className="w-8 h-8"
+          /> */}
+          <span className="text-lg font-bold text-primary-600 dark:text-primary-400">
+            {personalInfo.name.split(" ")[0]}
+            <span className="text-slate-900 dark:text-white">
+              .{personalInfo.name.split(" ").slice(1).join("")}
+            </span>
           </span>
         </a>
 

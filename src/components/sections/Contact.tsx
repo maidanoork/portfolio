@@ -57,7 +57,7 @@ export default function Contact() {
     <SectionWrapper id="contact" className="bg-white dark:bg-slate-900">
       <div className="text-center mb-14">
         <p className="text-primary-600 dark:text-primary-400 font-mono text-sm font-medium mb-3">
-          05. Get In Touch
+          04. Get In Touch
         </p>
         <h2 className="section-heading">Contact Me</h2>
         <p className="section-subheading mx-auto">

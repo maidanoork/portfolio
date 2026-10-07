@@ -1,5 +1,6 @@
 import { personalInfo } from "@/data/portfolio";
-import { FiGithub, FiLinkedin, FiTwitter, FiMail } from "react-icons/fi";
+import { FiLinkedin, FiTwitter, FiMail } from "react-icons/fi";
+import { SiDiscord, SiFiverr } from "react-icons/si";
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -13,16 +14,7 @@ export default function Footer() {
 
         <div className="flex items-center gap-4">
           <a
-            href={personalInfo.social.github}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="GitHub"
-            className="text-slate-500 hover:text-primary-600 dark:text-slate-400 dark:hover:text-primary-400 transition-colors"
-          >
-            <FiGithub size={20} />
-          </a>
-          <a
-            href={personalInfo.social.linkedin}
+            href={personalInfo.social.linkedin || "#"}
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn"
@@ -31,13 +23,31 @@ export default function Footer() {
             <FiLinkedin size={20} />
           </a>
           <a
-            href={personalInfo.social.twitter}
+            href={personalInfo.social.twitter || "#"}
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Twitter"
+            aria-label="X (Twitter)"
             className="text-slate-500 hover:text-primary-600 dark:text-slate-400 dark:hover:text-primary-400 transition-colors"
           >
             <FiTwitter size={20} />
+          </a>
+          <a
+            href={personalInfo.social.discord || "#"}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Discord"
+            className="text-slate-500 hover:text-primary-600 dark:text-slate-400 dark:hover:text-primary-400 transition-colors"
+          >
+            <SiDiscord size={20} />
+          </a>
+          <a
+            href={personalInfo.social.fiverr || "#"}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Fiverr"
+            className="text-slate-500 hover:text-primary-600 dark:text-slate-400 dark:hover:text-primary-400 transition-colors"
+          >
+            <SiFiverr size={20} />
           </a>
           <a
             href={`mailto:${personalInfo.email}`}

@@ -2,7 +2,8 @@
 
 import { motion } from "framer-motion";
 import { personalInfo } from "@/data/portfolio";
-import { FiGithub, FiLinkedin, FiArrowDown } from "react-icons/fi";
+import { FiLinkedin, FiArrowDown, FiTwitter } from "react-icons/fi";
+import { SiDiscord, SiFiverr } from "react-icons/si";
 import Image from "next/image";
 
 export default function Hero() {
@@ -106,24 +107,42 @@ export default function Hero() {
             transition={{ duration: 0.5, delay: 0.6 }}
             className="flex items-center gap-4 mt-8 justify-center lg:justify-start"
           >
-            <a
-              href={personalInfo.social.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="GitHub"
-              className="text-slate-500 hover:text-primary-600 dark:text-slate-400 dark:hover:text-primary-400 transition-colors"
-            >
-              <FiGithub size={22} />
-            </a>
-            <a
-              href={personalInfo.social.linkedin}
+            {/* <a
+              href={personalInfo.social.linkedin || "#"}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn"
               className="text-slate-500 hover:text-primary-600 dark:text-slate-400 dark:hover:text-primary-400 transition-colors"
             >
               <FiLinkedin size={22} />
+            </a> */}
+            <a
+              href={personalInfo.social.twitter || "#"}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="X (Twitter)"
+              className="text-slate-500 hover:text-primary-600 dark:text-slate-400 dark:hover:text-primary-400 transition-colors"
+            >
+              <FiTwitter size={22} />
             </a>
+            <a
+              href={personalInfo.social.discord || "#"}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Discord"
+              className="text-slate-500 hover:text-primary-600 dark:text-slate-400 dark:hover:text-primary-400 transition-colors"
+            >
+              <SiDiscord size={22} />
+            </a>
+            {/* <a
+              href={personalInfo.social.fiverr || "#"}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Fiverr"
+              className="text-slate-500 hover:text-primary-600 dark:text-slate-400 dark:hover:text-primary-400 transition-colors"
+            >
+              <SiFiverr size={22} />
+            </a> */}
           </motion.div>
         </div>
 
@@ -136,25 +155,15 @@ export default function Hero() {
         >
           <div className="relative w-56 h-56 md:w-72 md:h-72">
             <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary-400 to-accent blur-xl opacity-30 scale-110" />
-            <div className="relative w-full h-full rounded-full border-4 border-white dark:border-slate-700 shadow-2xl overflow-hidden bg-gradient-to-br from-primary-100 to-primary-200 dark:from-primary-900 dark:to-slate-800">
+            <div className="relative w-full h-full rounded-full border-4 border-white dark:border-slate-700 shadow-2xl overflow-hidden bg-gradient-to-br from-primary-100 to-primary-200 dark:from-primary-900 dark:to-slate-800 flex items-center justify-center">
               <Image
-                src={personalInfo.avatar}
-                alt={personalInfo.name}
-                fill
-                className="object-cover"
+                src="/SOVIClogo.svg"
+                alt="Logo"
+                width={180}
+                height={180}
+                className="w-3/4 h-3/4 object-contain"
                 priority
-                onError={(e) => {
-                  // Fallback: hide broken image, show initials
-                  (e.target as HTMLImageElement).style.display = "none";
-                }}
               />
-              {/* Fallback initials */}
-              <div className="absolute inset-0 flex items-center justify-center text-5xl font-bold text-primary-600 dark:text-primary-300">
-                {personalInfo.name
-                  .split(" ")
-                  .map((n) => n[0])
-                  .join("")}
-              </div>
             </div>
           </div>
         </motion.div>
