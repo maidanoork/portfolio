@@ -1,6 +1,14 @@
 # Portfolio
 
 A modern, responsive developer portfolio built with **Next.js 14**, **Tailwind CSS**, and **Framer Motion**.
+## deploy to githup
+git add .
+git commit -m "Update project"
+git push
+
+
+
+
 
 ## Getting Started
 
